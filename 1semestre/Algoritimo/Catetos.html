@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Catetos</title>
+</head>
+<body>
+    <h2>Insira: </h2>
+
+    1º Cateto: <input type="text" id="cateto1"> <br>
+    2º Cateto: <input type="text" id="cateto2"> <br>
+    
+    <button onclick="Calcular()">Calcular Hipotenusa</button>
+    <br>
+</body>
+</html>
+<script>
+function Calcular() {
+    // soma dos quadrados dos catetos
+    var soma_catetos = cateto1.value**2 + cateto2.value**2;
+
+    // raiz da soma dos quadrados
+    var hipotenusa = soma_catetos ** (1/2);
+    // var hipotenusa = soma_catetos ** 0.5;
+
+    alert(hipotenusa);
+}
+
+</script>

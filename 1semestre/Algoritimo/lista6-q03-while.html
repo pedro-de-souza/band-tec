@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 6 - q03</title>
+</head>
+<body>
+    <h2>Lista 6 - q03</h2>
+
+    Qual a frase? <input id="frase"> <br>
+    Quantas vezes? <input id="quantidade">
+
+    <button onclick="repetir()">Papagaio</button>
+    <br>
+    <div id="div_frases"></div>
+</body>
+</html>
+<script>
+function repetir() {
+    div_frases.innerHTML = '';
+
+    var valor_quantidade = Number(quantidade.value);
+
+    var contador = 0;    
+
+    while (contador < valor_quantidade) {
+        div_frases.innerHTML += `${frase.value} <br>`;
+        contador++;
+    }
+
+}
+</script>

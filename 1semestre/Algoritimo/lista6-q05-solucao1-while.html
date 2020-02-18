@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 6 - q05</title>
+</head>
+<body>
+    <h2>Lista 6 - q05</h2>
+
+    Quantos mundiais já ganhou (não vale taça Cachaça 51)? <br>
+    <input id="mundiais">
+
+    <button onclick="ver_trofeus()">
+        Ver troféus de mundiais FIFA
+    </button>
+    
+    <br><br>
+    <div id="div_trofeus"></div>
+</body>
+</html>
+<script>
+function ver_trofeus() {
+    div_trofeus.innerHTML = '';
+
+    var valor_mundiais = Number(mundiais.value);
+
+    if (valor_mundiais <= 0) {
+        div_trofeus.innerHTML = `<img src="chorando.jpg">`;
+    } else {
+        var contador = 0;    
+
+        while (contador < valor_mundiais) {
+            div_trofeus.innerHTML += `<img src="trofeu.jpg">`;
+            contador++;
+        }
+    }
+}
+</script>

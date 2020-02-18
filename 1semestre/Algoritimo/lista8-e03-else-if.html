@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 08 - questão 03</title>
+</head>
+<body>
+    <h2>Qual esporte?</h2>
+    Sua altura: 
+    <input id="altura" onkeyup="analisar()">
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+function analisar() {
+    
+    var valor_altura = Number(altura.value);
+
+    var resultado;
+    var cor;
+
+    if (valor_altura <= 1.65) {
+        resultado = "Piloto de corrida";
+        cor = 'blue';
+    } 
+    else if (valor_altura > 1.80) {
+        resultado = "Jogador de Vôlei ou Basquete";
+        cor = 'orange';
+    } else {
+        resultado = "Jogador de Futebol";
+        cor = 'green';
+    } 
+
+    div_resultado.innerHTML = resultado;
+    div_resultado.style.color = cor;
+}
+</script>

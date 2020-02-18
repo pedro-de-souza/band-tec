@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IF</title>
+</head>
+<body>
+    <h2>Filho</h2>
+
+    Insira a quantidade de filhos: <input type="text" id="filhos">
+    <button onclick="Filho()">Analisar família</button>
+    <br><br>
+    <div id="mensagem" >
+        <span id="maior_um" style="display: none">
+            Não tem TV
+        </span>
+        <span id="maior_dois" style="display: none">
+            Não tem internet
+        </span>
+        <span id="maior_tres" style="display: none">
+            Não tem video game
+        </span>
+        <span id="maior_quatro" style="display: none">
+            Não tem Netflix
+        </span>
+
+    </div>
+</body>
+</html>
+<script>
+    function Filho(){
+        qtd_filho = Number(filhos.value);
+        
+        maior_um.style.display = "none";
+        maior_dois.style.display = "none";
+        maior_tres.style.display = "none";
+        maior_quatro.style.display = "none";
+
+        if(qtd_filho >= 1){
+            maior_um.style.display = "block";
+
+            if(qtd_filho >= 2){
+                maior_dois.style.display = "block";
+
+                if(qtd_filho >= 3){
+                    maior_tres.style.display = "block";
+                    
+                    if(qtd_filho >= 4){
+                        maior_quatro.style.display = "block";
+
+                    }
+
+                }
+
+            }
+        }
+        
+    }
+</script>

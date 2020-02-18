@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pares</title>
+</head>
+<body>
+    <button onclick="Pares()">S2 Pares</button>
+    <div id="numeros"></div>
+</body>
+</html>
+<script>
+    function Pares(){
+        var num = Number(numeros.innerHTML);
+        var pares = 0;
+
+        while(pares<100){
+            pares +=2; 
+            numeros.innerHTML += pares+"<br>";
+        }
+    }
+</script>

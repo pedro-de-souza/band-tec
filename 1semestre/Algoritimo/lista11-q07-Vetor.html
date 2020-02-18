@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 11 - q07</title>
+</head>
+<body>
+    <h2>Lista 11 - q07</h2>
+
+    Nome do(a) filho(a): <input id="filho">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br>
+    <button onclick="atualizar()">Atualizar Família</button>
+    <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+var filhos = [];
+
+function cadastrar() {    
+    var repetido = 0;
+    for (var indice = 0; indice < filhos.length; indice++) {
+        if (filho.value == filhos[indice]) {
+            repetido++;
+        } 
+    }
+
+    if (repetido > 0) {
+        alert('Não pode mais de 1 filho com o mesmo nome!');
+    } else {
+        filhos.push(filho.value);
+    }
+}
+
+function atualizar() {
+    var quantidade = filhos.length;
+    
+    var custo_escola_privada = quantidade * 3000; 
+    var custo_escola_publica = quantidade * 1500; 
+
+    div_resultado.innerHTML = `
+    Você tem ${quantidade} filhos
+   Seu custo mensal será aproximadamente R$${custo_escola_privada.toFixed(2)} se colocar eles em escola particular ou R$${custo_escola_publica.toFixed(2)} se eles estudarem em escola pública
+    `
+}
+</script>

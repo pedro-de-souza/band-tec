@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 10 - q02</title>
+</head>
+<body>
+    <h2>Lista 11 - q02 - Pedra papel tesoura</h2>
+
+    <button onclick="jogar()">Jogar</button>
+    <br><br>
+
+    <img id="img1" style="margin-right: 20px; height: 200px;">
+    <img id="img2" style="height: 200px;">
+
+    <h2 id="div_resultado"></h2>
+</body>
+</html>
+<script>
+    var imagens = ['pedra.jpg','papel.jpg','tesoura.jpg'];
+   
+    // Em cada item: 
+    // [jogador1, jogador2, vencedor, explicação]
+    var regras = [
+        [0,1,2,'Papel cobre pedra'],
+        [0,2,1,'Pedra quebra a tesoura'],
+        [1,0,1,'Papel cobre pedra'],
+        [1,2,2,'Tesoura corta papel'],
+        [2,0,2,'Pedra quebra a tesoura'],
+        [2,1,1,'Tesoura corta papel']
+    ]; 
+    // 0 (pedra) ganha de 2 (tesoura)
+    // 1 (papel) ganha de 0 (pedra)
+    // 2 (tesoura) ganha de 1 (papel)
+
+    function jogar() {
+        // sorteando os números
+        var jogador1 = parseInt(Math.random()*3);
+        var jogador2 = parseInt(Math.random()*3);
+
+        // usando os números sorteados p/ pegar uma imagem
+        var imagem1 = imagens[jogador1];
+        var imagem2 = imagens[jogador2];
+
+        // trocando as imagens na página
+        img1.src = imagem1;
+        img2.src = imagem2;
+
+        // verificando que é o vencedor, se houver
+        var resultado;
+
+        if (jogador1 == jogador2) {
+            resultado = "EMPATE! Jogue novamente!";
+        } else {
+            var vencedor;
+            var explicacao;
+            
+            // iterando no vetor de regras
+            for (var r=0; r<regras.length; r++) {
+
+                // o primeiro cara de cada regra é igual ao valor do jogador1
+                // E o segundo cara de cada regra é igual ao valor do jogador2 ?
+                if (regras[r][0] == jogador1 && regras[r][1] == jogador2) {
+                    // Se sim, "deu match", então pegue o vencedor (posição 2 da regra)
+                    // e a explicação (posição 3 da regra)
+                    vencedor = regras[r][2];
+                    explicacao = regras[r][3];
+                }       
+            }            
+            
+            resultado = `Jogador ${vencedor} venceu porque ${explicacao}`;
+        }
+
+        div_resultado.innerHTML = resultado;
+    }
+
+
+</script>

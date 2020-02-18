@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 11 - q04</title>
+</head>
+<body>
+    <h2>Lista 11 - q04</h2>
+
+    Projeto: <input type="text" id="projeto">
+    <button onclick="cadastrar()">Registrar projeto</button>
+    <br>
+
+    <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+var projetos = [];
+
+function cadastrar() {    
+    projetos.push(projeto.value);
+
+    div_resultado.innerHTML = `Você já fez ${projetos.length} projetos. `;
+    div_resultado.innerHTML += 'Por isso você é um profissional ';
+
+    var resultado;
+    var projeto_resultado;
+    if (projetos.length <= 4) {
+        resultado = 'Júnior';
+        projeto_resultado = ''
+    } else if (projetos.length <= 12) {
+        resultado = 'Pleno';
+        projeto_resultado = ` desde o projeto ${projetos[4]}`;
+    } else {
+        resultado = 'Sênior';
+        projeto_resultado = ` desde o projeto ${projetos[12]}`;
+    }
+    div_resultado.innerHTML += resultado+projeto_resultado;
+}
+
+
+</script>

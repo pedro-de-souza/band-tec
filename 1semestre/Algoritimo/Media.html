@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Média</title>
+</head>
+<body>
+    <h2>Calculando média</h2>
+    
+    Insira a primeira nota <input type="text" id="nota_1"><br>
+    Insira a primeira nota <input type="text" id="nota_2"><br>
+
+    <button onclick="Media()">Verificar situação</button>
+</body>
+</html>
+<script>
+    function Media(){
+        var media = (Number(nota_1.value) + Number(nota_2.value)) / 2;
+
+        if(media >= 5){
+            alert("Parabéns, aprovado!");
+        }
+        alert("Tente outra vez")
+    }
+</script>

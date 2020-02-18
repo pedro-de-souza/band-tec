@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; margin: 0 auto;width: 30%;margin-top: 10%;">
+        <div style="display: flex;">
+
+            <img id='primeiro' width="150vw" src="..img/question.png" alt="">
+            <img width="100vw" src="..img/vs.png" alt="">
+            <img id='segundo' width="150vw" src="..img/question.png" alt="">
+        </div>
+        <button onclick="boraJogar()" 
+        style=" padding: 10px 15px; border-radius: 7px; background-color: maroon;color:white">
+        Jogar</button>
+        <br>
+        <b id='mensagem'></b>
+    </div>
+</body>
+</html>
+<script>
+    var jokepu =['..img/pedra.png','..img/tesoura.png','..img/papel.png'];
+    function boraJogar(){
+
+        var sorteado=[parseInt(Math.random()*3),parseInt(Math.random()*3)]
+        mensagem.innerHTML='';
+        
+        primeiro.src= jokepu[sorteado[0]];
+        segundo.src= jokepu[sorteado[1]];
+
+        if(jokepu[sorteado[0]] == jokepu[sorteado[1]]){
+            mensagem.innerHTML='EMPATE! Jogue novamente!';
+        } 
+        else if(jokepu[sorteado[0]]==jokepu[0] && jokepu[sorteado[1]]==jokepu[1]) {
+            mensagem.innerHTML='Jogador 1 venceu porque pedra quebra a tesoura';
+        }
+        else if(jokepu[sorteado[0]]==jokepu[1] && jokepu[sorteado[1]]==jokepu[0]){
+            mensagem.innerHTML='Jogador 2 venceu porque pedra quebra a tesoura';
+        }
+        else if(jokepu[sorteado[0]]==jokepu[1] && jokepu[sorteado[1]]==jokepu[2]){
+            mensagem.innerHTML='Jogador 1 venceu porque tesoura corta o papel';
+        }
+        else if(jokepu[sorteado[0]]==jokepu[2] && jokepu[sorteado[1]]==jokepu[1]){
+            mensagem.innerHTML='Jogador 2 venceu porque tesoura corta o papel';
+        }
+        else if(jokepu[sorteado[0]]==jokepu[2] && jokepu[sorteado[1]]==jokepu[0]){
+            mensagem.innerHTML='Jogador 1 venceu porque papel cobre a pedra';
+        }
+        else if(jokepu[sorteado[0]]==jokepu[0] && jokepu[sorteado[1]]==jokepu[2]){
+            mensagem.innerHTML='Jogador 2 venceu porque papel cobre a pedra';
+        }
+
+
+    }
+</script>

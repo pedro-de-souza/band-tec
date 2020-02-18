@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inveja</title>
+</head>
+<body>
+    <h2>Insira: </h2>
+
+    Salário do irmão <input type="text" id="salario"> <br>
+    Ficantes do irmão <input type="text" id="ficantes"> <br>
+    Foras do irmão <input type="text" id="foras"> <br>
+  
+    <button onclick="Inveja()">E o Igor?</button>
+    <br>
+</body>
+</html>
+<script>
+function Inveja() {
+    // pegar o salário do irmão
+    var salario_igor = Number(salario.value);
+
+    // aumentar em 10%
+    salario_igor *= 1.1;
+
+    alert(`Salário do Igor: ${salario_igor}`);
+
+    // pegar as do irmão
+    var ficantes_igor = Number(ficantes.value);
+
+    // aumentar as ficantes em 1
+    ficantes_igor++;
+
+    alert(`Ficantes do Igor: ${ficantes_igor}`);
+
+    // pegar os foras do irmão
+    var foras_igor = Number(foras.value);
+
+    // reduzir os foras
+    foras_igor--;
+
+    alert(`Foras do Igor: ${foras_igor}`);
+}
+
+</script>
+

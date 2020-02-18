@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 03</title>
+</head>
+<body>
+    <h2>Ajudando Jorge a se planejar</h2>
+    Insira o valor que irá guarda no mês: R$<input type="text" id="valor_mes">
+    <br>
+    <button onclick="oPlanejamento()">Ver planejamento</button>
+    <div id="div_mensagem" style="color: blue;display: none">
+        <br>
+        Guardando <b>R$<span id= "valor"></span></b> por mês, conseguirá comprar a casa em <b id="meses_carro" >M</b> meses OU <b id="ano_carro">A</b> anos
+        <br>
+        Guardando <b >R$<span id= "valor"></span></b> por mês, conseguirá comprar o carro em <b id="meses_casa">M</b> meses OU <b id="ano_casa">A</b> anos
+        <br> 
+        Guardando <b >R$<span id= "valor"></span></b> por mês, conseguirá fazer a viagem em <b id="meses_viagem">M</b> meses OU <b id="ano_viagem">A</b> anos
+        <br>
+    </div>
+</body>
+</html>
+<script>
+    function oPlanejamento(){
+        
+        meses_carro.innerHTML = (20000/valor_mes.value).toFixed(1);
+        meses_casa.innerHTML = (300000/valor_mes.value).toFixed(1);
+        meses_viagem.innerHTML = (80000/valor_mes.value).toFixed(1);
+        ano_carro.innerHTML = (meses_carro.innerHTML/12).toFixed(1);
+        ano_casa.innerHTML = (meses_casa.innerHTML/12).toFixed(1);
+        ano_viagem.innerHTML = (meses_viagem.innerHTML/12).toFixed(1);
+
+        valor[0].innerHTML = valor_mes.value;
+        valor[1].innerHTML = valor_mes.value;
+        valor[2].innerHTML = valor_mes.value;
+     
+        div_mensagem.style.display = 'block';
+          
+    }
+</script>

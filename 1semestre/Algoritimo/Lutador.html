@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fight</title>
+</head>
+<body>
+    <div>
+        Vida do Lutador:<b id="vida">1000</b>
+        <b id="zero" style="display:block">Lutador já era</b>
+        <b id="vivo" >Lutador ainda vivo!</b>
+    </div>
+    <br>
+    <button onclick="Apanhar()">Apanhar</button>
+    <button onclick="Forca()">Concentrar força</button>
+</body>
+</html>
+<script>
+    var life = Number(vida.innerHTML);
+    zero.style.display='none';
+    vivo.style.display='block';
+    function Apanhar(){
+        if(life>0){
+            vivo.style.display='block';
+            life-=100;
+            vida.innerHTML = life;
+        }
+        if(life <= 0){
+            zero.style.display='block';
+            vivo.style.display='none';
+            vida.innerHTML = '0';
+        }
+    }
+
+    function Forca(){
+        if(life>0){
+            vivo.style.display='block';
+            life+=10;
+            vida.innerHTML = life;
+        }
+        if(life <= 0){
+            zero.style.display='block';
+            vivo.style.display='none';
+            vida.innerHTML = '0';
+        }
+        
+    }
+</script>

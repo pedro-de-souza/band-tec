@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 7 - q02</title>
+</head>
+<body>
+    
+    <h2>Lista 7 - q02</h2>
+
+    Idade: <input type="text" id="idade">
+    <br>
+    <button onclick="festejar()">Ir pra festa</button>
+    <div id="div_festa"></div>
+</body>
+</html>
+<script>
+function festejar() {
+    var valor_idade = Number(idade.value);
+
+    var frase_permissao = 'Pedir permissão pro responsável';
+
+    var resultado = valor_idade < 15 ? `${frase_permissao} <br> Sem chance! Vai estudar!` : 
+     (valor_idade < 18 ? `${frase_permissao} <br> #partiuFesta` : '#partiuFesta');
+
+    div_festa.innerHTML = resultado;
+}
+</script>

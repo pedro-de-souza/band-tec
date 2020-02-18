@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 7 - q03</title>
+</head>
+<body>
+    
+    <h2>Lista 7 - q03</h2>
+
+    Peso no elevador: <input id="peso">
+    <br>
+    <button onclick="ligar_elevador()">Ligar elevador</button>
+    <div id="div_elevador"></div>
+</body>
+</html>
+<script>
+function ligar_elevador() {
+    var valor_peso = Number(peso.value);
+
+    div_elevador.innerHTML = valor_peso < 500 ? 'Elevador vai se mover' : 'Alguém precisa descer do elevador';
+}
+</script>

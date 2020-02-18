@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 6 - q09</title>
+</head>
+<body>
+    <h2>Lista 6 - q09</h2>
+
+    Quantas pessoas vão entrar no carro? <input id="passageiros">
+
+    <button onclick="carona()">Iniciar corrida!</button>
+    <br>
+    <div id="div_carona"></div>
+</body>
+</html>
+<script>
+function carona() {
+    div_carona.innerHTML = '';
+
+    var valor_passageiros = Number(passageiros.value);
+
+    var contador = 1;    
+
+    while (contador <= valor_passageiros) {
+        if (contador <=5 ) {
+            div_carona.innerHTML += `Entrou o ${contador}ª passageiro`;
+            if (contador == 1) {
+                div_carona.innerHTML += ' (que é o(a) motorista)';
+            }
+        } else {
+            div_carona.innerHTML += `O ${contador}ª passageiro terá que esperar`;
+        }
+        div_carona.innerHTML += '<br>';
+        contador++;
+    }
+    
+}
+</script>

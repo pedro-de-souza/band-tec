@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Único gráfico com Google Charts</title>
+  <script type="text/javascript" src="loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var dados = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expenses', 'AAA'],
+        ['2002', null, null, null],
+        ['2003', null, null, null],
+        ['2004', 250, null, 250],
+        ['2005', 120, 360, 360],
+        ['2006', 360, 900, 120],
+        ['2007', 360, 360, 120],
+        ['2008', 250, null, 250],
+        ['2009', null, null, null],
+        ['2010', null, null, null],
+      ]);
+
+      var opcoes = {
+        title: 'Gráfico do sem desempenho ninja',
+        curveType: 'function',
+        legend: { position: 'bottom' },
+       colors:['#b50202','#c76161','#b50202']
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('div_grafico'));
+
+      chart.draw(dados, opcoes);
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Único gráfico com Google Charts</h2>
+
+  <div id="div_grafico" style="width: 900px; height: 500px"></div>
+
+</body>
+
+</html>

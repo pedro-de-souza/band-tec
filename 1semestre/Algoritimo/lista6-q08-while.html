@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 6 - q08</title>
+</head>
+<body>
+    <h2>Lista 6 - q08</h2>
+
+    Quantas voltas? <input id="voltas">
+
+    <button onclick="correr()">Iniciar corrida!</button>
+    <br>
+    <div id="div_voltas"></div>
+</body>
+</html>
+<script>
+function correr() {
+    div_voltas.innerHTML = '';
+
+    var valor_voltas = Number(voltas.value);
+
+    var contador = 1;    
+
+    while (contador <= valor_voltas) {
+        div_voltas.innerHTML += ` Carro dando a ${contador}ª volta <br>`;
+        contador++;
+    }
+    
+}
+</script>

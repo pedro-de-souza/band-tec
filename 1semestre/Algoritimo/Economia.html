@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IF</title>
+</head>
+<body>
+    <h2>Economizado</h2>
+
+    Insira o valor que tem economizado: <input type="text" id="valor_economia">
+    <button onclick="Power()">Poder de comprar</button>
+    <br><br>
+    <div id="mensagem" >
+        <span id="menor_zero" style="display: none">
+            <b> Nada de compras :( </b>
+        </span>
+        <span id="maior_zero" style="display: none">
+            <b> Viajem de ida e volta pra Praia Grande</b>
+        </span>
+
+        <span id="moto" style="display: none">
+            <b> Uma boa moto usada</b>
+        </span>
+        
+        <span id="bobagem" style="display: none">
+            <b> Mais alguma bobagem legal</b>
+        </span>
+
+    </div>
+</body>
+</html>
+<script>
+    function Power(){
+        valor = Number(valor_economia.value);
+        
+        menor_zero.style.display = "none";
+        maior_zero.style.display = "none";
+        moto.style.display = "none";
+        bobagem.style.display = "none";
+
+        if(valor < 0){
+            menor_zero.style.display = "block";
+        }
+        if(valor > 0){
+            maior_zero.style.display = "block";
+
+            if(valor >= 1000){
+                 moto.style.display = "block";
+
+                 if(valor >= 4000){
+                     bobagem.style.display = "block";
+                }
+            }
+        }       
+        
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 08 - questão 06</title>
+</head>
+<body>
+    <h2>Peso ideal para 5 anos</h2>
+    Qual o peso da criança?
+    <input id="peso" onkeyup="analisar()">
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+function analisar() {
+    
+    var valor_peso = Number(peso.value);
+
+    var resultado;
+
+    if (valor_peso == 18.3) {
+        resultado = "Peso perfeito";
+    } else if (valor_peso <= 13.5) {
+        resultado = "Abaixo do peso";
+    } else if (valor_peso > 21.2) {
+        resultado = "Acima do peso";
+    } else {
+        resultado = "Peso na média";
+    }
+
+    div_resultado.innerHTML = resultado;
+}
+</script>

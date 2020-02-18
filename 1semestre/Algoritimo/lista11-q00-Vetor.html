@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 11 - q00</title>
+</head>
+<body>
+    <h2>Lista 11 - q00</h2>
+
+    <input type="text" id="pesquisa"><br>
+    <button onclick="pesquisar()">Pesquisar</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+var frutas = ['uva', 'pêra', 'morango', 'maçã', 'pêra'];
+
+function pesquisar() {    
+    var achei = 0;
+
+    for (var indice = 0; indice < frutas.length; indice++) {
+        if (pesquisa.value == frutas[indice]) {
+            achei++;
+        }
+    }
+
+    var resultado;
+    if (achei >= 1) {
+        resultado = `A fruta ${pesquisa.value} existe na lista`;
+    } else {
+        resultado = `Não existe a fruta ${pesquisa.value} na lista`
+    }
+
+    div_resultado.innerHTML = resultado;
+}
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 11 - q01</title>
+</head>
+<body>
+    <h2>Lista 11 - q01</h2>
+
+    Cadastre um destino: <input id="destino">
+    <br><button onclick="cadastrar()">Cadastrar</button>
+    
+    <br>
+    <button onclick="ver_primeiro()">Primeira Viagem</button>
+
+    <br>
+    <button onclick="ver_terceiro()">Terceira Viagem</button>
+
+    <br>
+    <button onclick="ver_ultimo()">Última Viagem</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var destinos = [];
+
+    function cadastrar() {
+        destinos.push(destino.value);
+    }
+
+    function ver_primeiro() {
+        var resultado;
+        if (destinos.length >= 1) {
+            resultado = destinos[0];
+        } else {
+            resultado = 'Ainda não viajou';
+        }
+        div_resultado.innerHTML = resultado;
+    }
+
+
+    function ver_terceiro() {
+        var resultado;
+        if (destinos.length >= 3) {
+            resultado = destinos[2];
+        } else {
+            resultado = 'Ainda não fez a 3ª viagem';
+        }
+        div_resultado.innerHTML = resultado;
+    }
+
+    function ver_ultimo() {
+        var resultado;
+        if (destinos.length >= 1) {
+            resultado = destinos[destinos.length-1];
+        } else {
+            resultado = 'Ainda não viajou';
+        }
+        div_resultado.innerHTML = resultado;
+    }
+
+</script>

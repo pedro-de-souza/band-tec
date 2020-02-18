@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Temporizador</title>
+</head>
+
+<body>
+    <h2>Temporizador</h2>
+    <div id='div_mantra'></div>
+</body>
+
+</html>
+<script>
+    var cont = 0;
+    function meuMantra() {
+        div_mantra.innerHTML += 'meu mantra<br>';
+        cont++;
+        if (cont < 4) {
+            setTimeout(() => {
+                meuMantra();
+            }, 2000);
+        }
+
+    }
+    function umRuido() {
+        div_mantra.innerHTML += 'um ruido<br>';
+        setTimeout(() => {
+            umRuido();
+        }, 1000);
+
+
+    }
+    window.onload = meuMantra(),umRuido();
+
+
+</script>

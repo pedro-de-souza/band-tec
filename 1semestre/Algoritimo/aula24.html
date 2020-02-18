@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Conector lógico &&(e)</h2>
+
+    Temperatura: <input type="text" id="temperatura"><br>
+    <button onclick="Clima()">Ver situação</button>
+    
+</body>
+</html>
+<script>
+    function Clima(){
+        var temp = Number(temperatura.value);
+
+        if(temp >=21 && temp <=24){
+            alert("Temperatura confortável :)");
+        }
+        else{
+            alert("Temperatura DESCONFORTÁVEL :(");
+        }
+    }
+</script>

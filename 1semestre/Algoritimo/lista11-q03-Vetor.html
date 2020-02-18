@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 11 - q03</title>
+</head>
+<body>
+    <h2>Lista 11 - q03</h2>
+
+    Bairro: <input type="text" id="bairro">
+    <button onclick="cadastrar()">Cadastrar Bairro</button>
+    <br>
+    
+    Relembrar: <input id="pesquisa">
+    <button onclick="relembrar()">Relembrar</button>
+
+    <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+var moradias = [];
+
+function cadastrar() {    
+    moradias.push(bairro.value);
+}
+
+
+function relembrar() {
+
+    var valor_pesquisa = parseInt(pesquisa.value);
+
+    var resultado;
+    if (moradias.length < valor_pesquisa) {
+        resultado = `Você ainda não morou num ${valor_pesquisa}º bairro!`;
+    } else {
+        resultado = moradias[valor_pesquisa-1];
+    }
+    div_resultado.innerHTML = resultado;
+}
+
+</script>

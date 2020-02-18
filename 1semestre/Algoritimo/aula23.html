@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IF -ELSE</title>
+</head>
+<body>
+    <h2>IF- ELSE</h2>
+
+    Sua idade: <input type="text" id="idade">
+    <button onclick="Maioridade()">Ver maioridade</button>
+</body>
+</html>
+
+<script>
+    function Maioridade(){
+        var valor_idade = Number(idade.value);
+
+        if(idade >= 18){
+            aler('Vocé é maior de idade');
+        }
+        else{
+            aler('Vocé não é maior de idade');
+        }
+    }
+</script>

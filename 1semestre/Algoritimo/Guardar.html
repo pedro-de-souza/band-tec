@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div>
+        Valor guardado: R$<b id="valor">0.00</b>
+        <p id ="financaOk" style="color:midnightblue; font-weight: bold">
+            Finanças OK! 
+            <b id="osten" style="display:none"> #ostentação</b>
+        </p>
+        <p id ="financaNOk" style="color:maroon; font-weight: bold">
+            Finanças em perigo! 
+            <b id="quase" style="display:none"> Quase um Corinthians!</b>
+        </p>
+    </div>
+    <button onclick="Guardar()">Guardar R$5,00</button>
+    <button onclick='Gastar()'>Gastar R$10,00</button>
+</body>
+</html>
+
+<script>
+
+    var dinheiro = Number(valor.innerHTML);
+    osten.style.display='none';
+    quase.style.display='none';
+    financaNOk.style.display='none';
+    function Guardar(){
+        dinheiro += 5;
+        valor.innerHTML = dinheiro.toFixed(2);
+        if(dinheiro >= 0){
+            financaOk.style.display='block';
+            financaNOk.style.display='none';
+            quase.style.display='none';
+            if(dinheiro >= 100){
+                osten.style.display='block';
+            }  
+        }
+        if(dinheiro >-20){
+            quase.style.display='none';
+        }
+
+        
+    }
+    function Gastar(){
+        
+        dinheiro -= 10;
+        valor.innerHTML = dinheiro.toFixed(2);
+        if(dinheiro < 0){
+            financaOk.style.display='none';
+            financaNOk.style.display='block';
+            osten.style.display='none';
+            if(dinheiro<=-20)
+                quase.style.display='block';
+           
+        }
+        if(dinheiro<100){
+            osten.style.display='none'
+        }
+        
+    }
+   
+</script>

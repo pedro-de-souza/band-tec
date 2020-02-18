@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 08 - questão 02</title>
+</head>
+<body>
+    <h2>Qual sua classe social?</h2>
+    Renda familiar mensal: 
+    <input id="renda" onkeyup="analisar()">
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+function analisar() {
+    
+    var valor_renda = Number(renda.value);
+
+    var resultado;
+
+    if (valor_renda <= 250) {
+        resultado = "Classe E";
+    } else if (valor_renda > 9500) {
+        resultado = "Classe A";
+    } else if (valor_renda > 2500) {
+        resultado = "Classe B";
+    } else if (valor_renda > 900) {
+        resultado = "Classe C";
+    } else {
+        resultado = "Classe D";
+    }
+
+    div_resultado.innerHTML = resultado;
+}
+</script>

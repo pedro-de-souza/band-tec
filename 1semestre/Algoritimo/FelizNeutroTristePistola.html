@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emoção</title>
+    <div style="text-align: center;">
+        <button style="font-size: 25px" onclick="eFeliz()">Feliz</button>
+        <button style="font-size: 25px" onclick="eNeutro()">Neutro</button>
+        <button style="font-size: 25px" onclick="eTriste()">Triste</button>
+        <button style="font-size: 25px" onclick="eBravo()">Bravo</button><br>
+        <img id="emocao">
+    </div>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    function eFeliz() {
+        emocao.src = '..img/feliz.jpg';
+    }
+    function eNeutro() {
+        emocao.src = '..img/neutro.jpg';
+    }
+    function eTriste() {
+        emocao.src = '..img/triste.jpg';
+    }
+    function eBravo() {
+        emocao.src = '..img/bravo.jpeg';
+        emocao.style = 'width: 650px'
+    }
+
+
+</script>

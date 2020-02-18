@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interestrelar</title>
+</head>
+
+<body>
+    <h3> Astronautas do Interestrelar</h3>
+
+    Digite seu nome de astronauta: <input id='nome'>
+    <br>
+    Digite quantidade de dias que passou nessa viagem: <input id='dias'>
+    <br>
+    Digite quantidade de horas que passou nessa viagem: <input id='horas'>
+    <br>
+    Digite quantidade de minutos que passou nessa viagem: <input id='minutos'>
+    <br>
+
+    <button onclick="registrarViagem()">Registrar viagem</button>
+    <br>
+
+    <!-- Mensagens -->
+    <span id='mensagem_registros'></span>
+    <br>
+    <div id='mensagens_viagens'></div>
+
+</body>
+</body>
+
+</html>
+<script>
+    var nome_astronauta = []; //Vetor para guarda os registros 
+    var tempo; //Variável para guarda o tempo que passou na viagem
+    var tempo_na_terra = []; //Vetor para guarda o tempo na terra
+    var cont = 1;//Variável para contar os registros
+
+
+    function registrarViagem() {
+
+        if (dias.value < 0 || horas.value < 0 || minutos.value < 0) { // Nenhum campo pode ser menor que 0
+            alert("Informe um tempo de viagem válido!"); // Caso for menor que 0
+        }
+        else {
+            tempo = parseInt(((dias.value * 1440)+(horas.value*60)+(minutos.value))*49);
+            //Pegando todos regristros de tempo e convertendo para minuto e guardando dentro do vetor
+
+            tempo_na_terra.push(tempo/525600);
+            //Convertendo o tempo que ele passou na viagem para tempo na terra
+
+            nome_astronauta.push(nome.value);
+            
+            mensagem_registros.innerHTML=`<br>Foram registradas ${cont} viagens, detalhadas a seguir:`;
+            
+            mensagens_viagens.innerHTML+=`<br>Viagem: ${cont++}`;
+
+            mensagens_viagens.innerHTML+=`<br>Astronauta ${nome_astronauta[cont-2]}
+            ficou fora por pelo menos ${tempo_na_terra[cont-2].toFixed(0)} anos no tempo da Terra.<br>`
+
+            if(tempo_na_terra[cont-2].toFixed(0)<=13){
+                 mensagens_viagens.innerHTML+='<img width=300  src="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png">';
+            }
+            else if(tempo_na_terra[cont-2]>13 && tempo_na_terra[cont-2]<=30 ){
+                 mensagens_viagens.innerHTML+='<img width=300  src="https://i.pinimg.com/originals/13/67/37/13673745a5fc5988d28be3473b3e9666.png">';
+            }
+            else if(tempo_na_terra[cont-2]>30 && tempo_na_terra[cont-2]<=65 ){
+                 mensagens_viagen.innerHTMLs+='<img width=300  src="https://i.etsystatic.com/15083389/r/il/d33044/1880463705/il_794xN.1880463705_9p3u.jpg">';
+            }
+            else if(tempo_na_terra[cont-2]>65 && tempo_na_terra[cont-2]<=100 ){
+                 mensagens_viagens.innerHTML+='<img width=300  src="https://cdn.drawception.com/images/panels/2015/3-23/qwRs1r4LRd-8.png">';
+            }
+            else if(tempo_na_terra[cont-2]>100){
+                 mensagens_viagens.innerHTML+='<img width=300  src="https://i.ebayimg.com/images/g/CDIAAOSw0c9bkbk-/s-l300.jpg">';
+            }
+            
+        }
+    }
+</script>

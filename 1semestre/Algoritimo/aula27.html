@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="pt">
+=======
+<html lang="en">
+>>>>>>> f5f63b976b831c29ccfa71eba489c9775188073b
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
+    <title>Aula 26</title>
+</head>
+<body>
+    <h2>estrutura de reétoções</h2>
+    <button onclick="repetir()">Respetir alerts</button>
+    
+</body>
+</html>
+<script>
+    function repetir(){
+        var contador = 0;
+
+        while(contador<10){
+            alert('Algoritimos é vida');
+            contador++;
+        }
+=======
+    <title>Document</title>
+</head>
+<body>
+    <h2>Obtendo informações de textos</h2><br>
+    Digite algo: <input type="text" id="frase" onkeyup="analisar()"><br>
+    Quantas letras? <b id="letras"></b> <br>
+    Começa com 'a'? <b id="v_a"></b><br>
+    Termina com 'c'? <b id="v_c"></b><br>
+    Contém '@'? <b id="contem"></b><br>
+    Está vazio? <b id="vazio"></b><br>
+</body>
+</html>
+<script>
+    function analisar(){
+        var valor_frase = frase.value;
+        letras.innerHTML = valor_frase.length;
+        v_a.innerHTML = valor_frase.startsWith('a');
+        v_c.innerHTML = valor_frase.endsWith('c');
+        contem.innerHTML = valor_frase.indexOf('@')>=0;
+
+        //vazio.innerHTML = valor_frase == '';
+
+        vazio.innerHTML = valor_frase.length == 0;
+>>>>>>> f5f63b976b831c29ccfa71eba489c9775188073b
+    }
+</script>

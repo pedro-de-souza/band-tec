@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 11 - q10</title>
+</head>
+<body>
+    <h2>Lista 11 - q10</h2>
+
+    Número: <input id="novo_numero">
+    <button onclick="cadastrar_analisar()">Analisar histórico</button>
+    <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+var numeros = [];
+
+function cadastrar_analisar() {    
+    div_resultado.innerHTML = '';
+
+   numeros.push(Number(novo_numero.value));
+
+   var maior = numeros[0];
+   var menor = numeros[0];
+
+   for (var indice = 0; indice < numeros.length; indice++) {
+       if (numeros[indice] > maior) {
+           maior = numeros[indice];
+       }
+       if (numeros[indice] < menor) {
+           menor = numeros[indice];
+       }       
+       div_resultado.innerHTML += `${indice+1}º Número: ${numeros[indice]} <br>`;
+   }
+
+   div_resultado.innerHTML += `<br>
+   Maior: ${maior} <br>
+   Menor: ${menor}`;
+
+}
+
+</script>

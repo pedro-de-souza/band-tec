@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fight</title>
+</head>
+<body>
+    <div>
+        Vida do Lutador:<b id="vida">1000</b><br>
+        <img id="lutador" width="150px" src="..img/Naruto_Uzumaki.png"><br>
+        <b id="zero" style="display:block">Lutador já era</b>
+        <b id="vivo" >Lutador ainda vivo!</b>
+    </div>
+    <br>
+    <button onclick="Apanhar()">Apanhar</button>
+    <button onclick="Forca()">Concentrar força</button>
+</body>
+</html>
+<script>
+    var life = Number(vida.innerHTML);
+    
+    zero.style.display='none';
+    vivo.style.display='block';
+    function Apanhar(){
+        if(life>0){
+            vivo.style.display='block';
+            life-=100;
+            vida.innerHTML = life.toFixed(0);
+            lutador.src= "..img/Naruto_Hurt.gif";
+            lutador.style.width="320px";
+
+        }
+        if(life <= 0){
+            zero.style.display='block';
+            vivo.style.display='none';
+            vida.innerHTML = '0';
+            lutador.src= "..img/NarutoZero.png";
+            lutador.style.width="350px";
+        }
+    }
+
+    function Forca(){
+        if(life>0){
+            vivo.style.display='block';
+            var life_vida= life*0.05;
+            life += life_vida;
+            vida.innerHTML = life.toFixed(0);
+            lutador.src= "..img/NarutoFight.png";
+            lutador.style.width="280px";
+        }
+        if(life <= 0){
+            lutador.style.width="350px";
+            zero.style.display='block';
+            vivo.style.display='none';
+            vida.innerHTML = '0';
+            lutador.src= "..img/NarutoZero.png";
+            lutador.style.width="350px";
+        }
+        
+    }
+</script>

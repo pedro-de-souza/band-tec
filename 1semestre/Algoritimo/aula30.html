@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vetores || Array</title>
+</head>
+<body>
+    <h2>Vetores || Array</h2>
+    Qual destino?
+    <input onkeyup="verDestino()" id='destino'>
+
+    <div id='div_destino'></div>
+</body>
+</html>
+<script>
+    var destinos = ['Grécia','Japão','Noruega','Chile','Perú'];
+
+    function verDestino(){
+        var indice = parseInt(destino.value)-1;
+        var encontrar = destinos[indice];
+        div_destino.innerHTML=encontrar;
+    }
+</script>

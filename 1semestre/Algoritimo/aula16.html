@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Lista supensa ou "combo box:"
+    <select id="frutas">
+        <option >Escolha um fruta</option>
+        <option Value="1">Abacaxi</option>
+        <option Value="2">Laranja</option>
+        <option Value="3">Maracuja</option>
+        <option Value="4">Uva</option>
+    </select>
+    <button onclick="Mostrar()">Ver valor real</button>
+</body>
+</html>
+<script>
+    function Mostrar(){
+        alert(`Valor real da combo: ${frutas.value}`);
+
+    }
+</script>

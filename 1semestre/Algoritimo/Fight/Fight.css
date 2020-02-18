@@ -1,0 +1,22 @@
+button {
+    border-style: none;
+    border-radius: 10px;
+    padding: 10px 77px 10px 77px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif, 100;
+    font-weight: bold;
+    background-color: rgb(24, 168, 31);
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: rgba(46, 202, 54, 0.863);
+}
+
+div div div{
+    width: 300px;
+    height: 30px;
+    background-color: green;
+}

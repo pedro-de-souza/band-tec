@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="text-align: center; margin-top: 50px">
+    <div style=" text-align: center; display: inline-block">
+        <img onclick="Tim()" style="width: 460px" src="..img/tim.jpg">
+        <br>
+        <span style=" font-size: 20px" >Votos:<b id="tim">0</b></span>
+    </div>
+    <img style="width: 100px; margin: 0px 20px 73px 10px; " src="..img/vs.png"> 
+    <div style=" text-align: center; display: inline-block">  
+        <img onclick="Roberto()" style="width: 350px" src="..img/roberto.png"> 
+        <br>           
+        <span style=" font-size: 20px">Votos:<b id="roberto">0</b></span>
+    </div>
+    <br>
+    <div style="text-align: center; font-size: 35px">Total dos votos: <b id="total">0</b></div>
+</body>
+</html>
+<script>
+    var total_votos=0, tim_voto=0,roberto_voto=0;
+    function Tim(){
+        tim_voto=Number(tim.innerHTML);
+        tim_voto++;
+        tim.innerHTML= tim_voto;
+
+        total_votos=Number(tim.innerHTML)+Number(roberto.innerHTML);
+        total.innerHTML =total_votos;
+
+    }
+    function Roberto(){
+        roberto_voto=Number(roberto.innerHTML);
+        roberto_voto++;
+        roberto.innerHTML= roberto_voto;
+
+        total_votos=Number(tim.innerHTML)+Number(roberto.innerHTML);
+        total.innerHTML =total_votos;
+    }
+</script>

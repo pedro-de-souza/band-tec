@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 7 - q04</title>
+</head>
+<body>
+    
+    <h2>Lista 7 - q04</h2>
+
+    Quantos homens? <input id="homens">
+    <br>
+    Quantas mulheres? <input id="mulheres">
+    <br>
+
+    <button onclick="ligar()">Ligar elevador</button>
+
+    <div id="div_resultado">
+    </div>
+</body>
+</html>
+<script>
+function ligar() {
+    var peso_total = Number(homens.value)*90 + Number(mulheres.value)*70;
+
+    var precisa_perder = (peso_total - 500) + 1;
+
+    var frase = peso_total < 500 ? `Elevador vai se mover, pois está com ${peso_total}kg` : `Alguém precisa descer. Precisa perder ${precisa_perder}kg para mover o elevador`;
+
+    var cor = peso_total < 500 ? 'green' : 'red';
+
+    div_resultado.innerHTML = frase;
+    div_resultado.style.color = cor;
+
+}
+</script>

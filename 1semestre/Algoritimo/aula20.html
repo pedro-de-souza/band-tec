@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IF</title>
+</head>
+<body>
+    <h2>Banco</h2>
+
+    Insira o valor do seu saldo na conta: <input type="text" id="saldo">
+    <button onclick="Financa()">Verificar finanças</button>
+    <br>
+    <div id="mensagem" >
+        <span id="igual_zero" style="display: none">
+            Conta zerada
+        </span>
+        <span id="menos_zero" style="display: none; color: brown;">
+                Está devendo
+        </span>
+        <span id="menos_menos_mil" style="display: none; color: brown;">
+                Igual ao Corinthias: No SERASA
+        </span>
+        <span id="maior_zero" style="display: none; color: green">
+                Saldo positivo!
+        </span>
+
+    </div>
+</body>
+</html>
+<script>
+    function Financa(){
+        valor_saldo = Number(saldo.value);
+        
+        maior_zero.style.display = "none";
+        igual_zero.style.display = "none";
+        menos_menos_mil.style.display = "none";
+        menos_zero.style.display = "none";
+
+
+        if(valor_saldo == 0){
+            igual_zero.style.display = "block";
+        }
+        if(valor_saldo < 0){
+            menos_zero.style.display = "block";
+            if(valor_saldo <= -1000){
+                menos_menos_mil.style.display = "block";    
+            } 
+        }
+        if(valor_saldo>0){
+            maior_zero.style.display = "block";
+        }
+        
+    }
+</script>

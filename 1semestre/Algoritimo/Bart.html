@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="text-align: center">
+    Insira o quanto será a movimentação dele <input type="text" id="valor"><br>
+    <br>
+    <button onclick="Cima()">Mover p/ cima</button>
+    <button onclick="Esquerda()">Mover p/ esquerda</button>
+    <button onclick="Baixo()">Mover p/ baixo</button>
+    <button onclick="Direita()">Mover p/ direita</button>  
+    <br><br>
+    <img id="bart" width="350px;" src="..img/bart-simpson-skate.png">
+    
+</body>
+</html>
+
+<script>
+    movimentacao = 0;
+    
+    function Cima(){
+        movimentacao += Number(valor.value);
+        bart.style.marginTop = `${movimentacao}px`;
+        movimentacao= valor.value;
+    }
+    function Esquerda(){
+        movimentacao += Number(valor.value);
+        bart.style.marginLeft = `${movimentacao}px`;
+        movimentacao= valor.value;      
+    }
+    function Baixo(){
+        movimentacao += Number(valor.value);
+        bart.style.marginBottom = `${movimentacao}px`;
+        movimentacao= valor.value;
+    }
+    function Direita(){
+        movimentacao += Number(valor.value);
+        bart.style.marginRight = `${movimentacao}px`;
+        movimentacao= valor.value;
+    }
+</script>
