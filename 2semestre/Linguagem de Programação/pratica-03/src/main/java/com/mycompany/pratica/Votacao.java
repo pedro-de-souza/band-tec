@@ -5,6 +5,7 @@
  */
 package com.mycompany.pratica;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -19,8 +20,8 @@ public class Votacao {
         System.out.println("Escolha o sabor de pizza favorito.");
 
         System.out.println("5 - Mussarela\n25 - Calabresa \n50 - Quatro queijos");
-        for (Integer cont = 1; cont <= 5; cont++) {
-            System.out.print("Vote no seu sabor favorito: ");
+        for (Integer cont = 1; cont<=10; cont++) {
+            System.out.print(cont+"° voto. Escolha seu sabor favorito: ");
             voto = leitor.nextInt();
 
             switch (voto) {
@@ -42,18 +43,8 @@ public class Votacao {
         System.out.println("10 Votos:");
         System.out.println("5 - Mussarela: " + votoMussarela
                 + " votos\n25 - Calabresa: " + votoCalabresa
-                + " votos \n50 - Quatro queijos: " + votoQueijos + " votos");
-
-        if (votoMussarela == votoCalabresa || votoCalabresa == votoQueijos || votoMussarela == votoQueijos) {
-            System.out.print("\nOcorreu um empate ");
-            if(votoMussarela == votoCalabresa){
-                System.out.print("entre Mussarela e Calabresa");
-            } else if(votoCalabresa == votoQueijos){
-                System.out.print("entre Calabresa e Quatro queijos");
-            }else{
-                System.out.print("entre Mussarela e Quatro queijos");
-            }
-        } else {
+                + " votos \n50 - Quatro queijos: " + votoQueijos + "votos");
+        if (votoMussarela > votoCalabresa || votoMussarela < votoCalabresa || votoMussarela > votoQueijos || votoMussarela < votoQueijos) {
             System.out.print("\nO vencedor é ");
             if (votoMussarela > votoCalabresa && votoMussarela > votoQueijos) {
                 System.out.println("Mussarela");
@@ -62,8 +53,20 @@ public class Votacao {
             } else {
                 System.out.println("Quatro queijos");
             }
+        } else {
+            if (Objects.equals(votoCalabresa, votoQueijos)
+                    || Objects.equals(votoMussarela, votoCalabresa) || Objects.equals(votoMussarela, votoQueijos)) {
+                System.out.print("\nOcorreu um empate ");
+                if (Objects.equals(votoMussarela, votoCalabresa)) {
+                    System.out.print("entre Mussarela e Calabresa");
+                } else if (Objects.equals(votoCalabresa, votoQueijos)) {
+                    System.out.print("entre Calabresa e Quatro queijos");
+                } else {
+                    System.out.print("entre Mussarela e Quatro queijos");
+                }
+
+            }
 
         }
-
     }
 }

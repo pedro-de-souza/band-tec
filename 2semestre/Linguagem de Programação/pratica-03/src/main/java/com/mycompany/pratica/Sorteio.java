@@ -5,6 +5,7 @@
  */
 package com.mycompany.pratica;
 
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -30,14 +31,14 @@ public class Sorteio {
                 else{
                     numSortImp++;
                 }
-                if(numSorteado.equals(numDigitado)){
-                    qSorte++;
+                if(qSorte == 0 && numSorteado.equals(numDigitado)){
+                    qSorte = cont;
                 }
                 numSorteado = aleatorio.nextInt(100) + 1;
             }
             System.out.println(String.format("Foram sorteados %d numeros pares", numSortPar));
             System.out.println(String.format("Foram sorteados %d numeros impares", numSortImp));
-            System.out.println("O número que você digitou foi sorteado "+ (qSorte>0?qSorte:"nenhuma")+" " + (qSorte <= 1 ? "vez":"vezes"));
+            System.out.println("O número que você digitou"+ (qSorte==0?" não ficou em numha posição":"ficou na "+ qSorte +" ° posição"));
         }
         else{
             System.out.println("Somente um numero entre 1 e 100");
