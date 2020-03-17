@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author Aluno
  */
 public class ProvaPratica {
+    
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         Integer horasVoo;
@@ -24,21 +25,22 @@ public class ProvaPratica {
             System.out.print("De quantas horas foi seu último vôo? ");
             horasVoo = leitor.nextInt();
             
+            if(horasVoo < 0) {
+                break;
+            }
+            
             if(horasVoo <= 0 || horasVoo > 6 ) {
                 System.out.println("\nQuantidade inválida! Não será registrada!");
-            } else {
+            } 
+            else {
                 horasVooTotal += horasVoo;
                 cont++;
                 System.out.println(String.format("\n%s agora tem um total de %d horas de vôo", nomePiloto,horasVooTotal));
             }
-        }while(horasVoo >=0);
+        }
+        while(horasVoo >=0);
+        
         System.out.println("\n---------------------------Parabéns piloto-----------------------------------");
         System.out.println(String.format("\n%s se aposentou após fazer %d vôos acumulando %d horas!\n", nomePiloto,cont,horasVooTotal));
-        
-        
-        
-        
-        
-        
     }
 }
