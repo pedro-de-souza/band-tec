@@ -71,7 +71,7 @@ public class Desempenho extends javax.swing.JFrame {
             
             
         };
-    Timer timer = new Timer(2000, action);
+    Timer timer = new Timer(1000, action);
     timer.start ();
 
 
