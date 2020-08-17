@@ -24,7 +24,7 @@ public class ProvaPratica {
             System.out.print("De quantas horas foi seu último vôo? ");
             horasVoo = leitor.nextInt();
             
-            if(horasVoo <= 0 || horasVoo > 6 ) {
+            if(horasVoo == 0 || horasVoo > 6 ) {
                 System.out.println("\nQuantidade inválida! Não será registrada!");
             } else {
                 horasVooTotal += horasVoo;

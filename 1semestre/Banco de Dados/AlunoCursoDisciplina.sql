@@ -48,7 +48,6 @@ select a.* ,c.nome,cord from aluno as a , curso as c where fkcurso=idcurso;
 
 select a.* ,c.nome 'Nome do Curso',cord from aluno as a , curso as c where fkcurso=idcurso;
 
-
 update aluno set fkcurso = 105 where ra = 1192123; 
    
  alter table aluno add fkcurso int, add foreign key (fkcurso) references curso(idcurso);
