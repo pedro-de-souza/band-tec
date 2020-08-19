@@ -103,7 +103,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Login realizado com sucesso");
         }
         else{
-            JOptionPane.showMessageDialog(null,"Login e/ou senha inválidos");
+            JOptionPane.showMessageDialog(null,"Login e/ou senha inválidos", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

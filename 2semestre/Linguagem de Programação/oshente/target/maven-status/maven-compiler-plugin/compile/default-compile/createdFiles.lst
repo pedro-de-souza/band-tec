@@ -1,3 +1,12 @@
+<<<<<<< HEAD
 com\mycompany\oshente\Tela.class
 com\mycompany\oshente\Tela$2.class
 com\mycompany\oshente\Tela$1.class
+=======
+com\mycompany\oshente\Taskun$1.class
+com\mycompany\oshente\TesteConsole.class
+com\mycompany\oshente\Taskun.class
+com\mycompany\oshente\CPU.class
+com\mycompany\oshente\HD.class
+com\mycompany\oshente\RAM.class
+>>>>>>> 622c6db2b3302f12fc5986f52c79e1f2b2507e0e
