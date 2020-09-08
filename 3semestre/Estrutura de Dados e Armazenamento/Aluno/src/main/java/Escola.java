@@ -41,11 +41,12 @@ public class Escola {
     }
 
     public void buscarAluno(Integer ra){
-        for(Aluno a : listaAluno)
+        for(Aluno a : listaAluno) {
             if (ra.equals(a.getRa())) {
                 System.out.println(a);
                 return;
             }
+        }
         System.out.println(" Aluno não encontrado");
 
     }
