@@ -44,21 +44,5 @@ public class Exercicio07 {
         System.out.println(Arrays.toString(vetor1));
         System.out.println(Arrays.toString(vetor2));
 
-
-        Integer cont = 0;
-        Integer a;
-        while (cont < vetor1.length) {
-            while((a = cont+1) < cont){
-                if (vetor1[cont] < vetor2[cont]) {
-                    vetor3[cont] = vetor1[cont];
-                    vetor3[a] = vetor2[cont];
-                } else {
-                    vetor3[cont] = vetor2[cont];
-                    vetor3[a] = vetor2[cont];
-                }
-            }
-            cont++;
-        }
-        System.out.println(Arrays.toString(vetor3));
     }
 }
