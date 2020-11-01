@@ -22,7 +22,7 @@ public class Exercicio3 {
                 System.out.print("Digite um número: ");
                 num = scanner.nextInt();
                 try {
-                    if (num < 1 || num > 6) {
+                    if (num <= 1 || num > 6) {
                         throw new Exception("Somente valores entre 1 e 6");
                     }
                     repetir = false;
