@@ -89,12 +89,11 @@ public class JogoDaVelha {
         return false;
     }
 
-    public static void main(String[] args) {
-
-        Boolean acabou = false;
-        Character[][] jogadas = new Character[3][3];
+    public static void partida(Character[][] jogadas){
 
         Scanner scanner = new Scanner(System.in);
+        Boolean acabou = false;
+
         Character jogador1 = 'X';
         Character jogador2 = 'O';
 
@@ -158,18 +157,24 @@ public class JogoDaVelha {
                 scanner.nextLine();//Vai para o próximo
             }
         } while (!acabou);
+    }
+
+    public static void main(String[] args) {
+
+        Character[][] jogadas = new Character[3][3];
+        partida(jogadas);
 
         if(haEmpate(jogadas)){
-            System.out.println(COLOR_YELLOW +"\t  EMPATE"+COLOR_RESET);
+            System.out.println(COLOR_YELLOW +"\t    EMPATE"+COLOR_RESET);
         }
 
         Character resposta;
         do{
             System.out.print("DESEJA JOGAR NOVAMENTE? SIM[S] NÃO[N]: ");
-            resposta = Character.toUpperCase(scanner.next().charAt(0));
+            resposta = Character.toUpperCase(new Scanner(System.in).next().charAt(0));
             switch (resposta) {
                 case 'S':
-                    main(args);
+                    partida(jogadas);
                     break;
                 case 'N':
                     System.out.println("\nFINALIZANDO PROGRAMA");
@@ -177,6 +182,6 @@ public class JogoDaVelha {
                 default:
                     System.out.println("\nDIGITE UMA RESPOSTA VÁLIDA ");
             }
-        }while(resposta !='N');
+        }while(resposta !='S' && resposta !='N');
     }
 }
