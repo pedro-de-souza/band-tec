@@ -94,9 +94,6 @@ public class JogoDaVelha {
         Scanner scanner = new Scanner(System.in);
         Boolean acabou = false;
 
-        Character jogador1 = 'X';
-        Character jogador2 = 'O';
-
         Integer numJogadas = 1;
 
         reset(jogadas);
@@ -104,9 +101,9 @@ public class JogoDaVelha {
 
         do {
             try {
-                if (numJogadas <= 9) {
-                    Integer quemTajogado = numJogadas % 2 != 0 ? 1 : 2;
-                    System.out.printf("\nJogador %d - Faça sua jogada: \n", quemTajogado);
+                if (!haEmpate(jogadas)) {
+                    Character quemTaJogado = numJogadas % 2 != 0 ? 'X' : 'O';//'X' representa o jogador1, 'O' representa o jogador2
+                    System.out.printf("\nJogador %d - Faça sua jogada: \n", quemTaJogado == 'X' ? 1 : 2);
                     System.out.print("Digite a linha: ");
                     Integer linha = scanner.nextInt();
 
@@ -119,11 +116,11 @@ public class JogoDaVelha {
                         } else if (!jogadas[linha - 1][coluna - 1].equals(' ')) {
                             throw new Exception("ESSE CAMPO JÁ ESTÁ OCUPADO. SELECIONE OUTRO CAMPO");
                         } else {
-                            jogadas[linha - 1][coluna - 1] = quemTajogado == 1 ? jogador1 : jogador2;
+                            jogadas[linha - 1][coluna - 1] = quemTaJogado;
                             exibi(jogadas);
                             numJogadas++;
 
-                            if (haVencedor(jogadas, jogador1)) {
+                            if (haVencedor(jogadas, 'X')) {//Jogador1 venceu?
                                 System.out.println(COLOR_YELLOW +
                                         "\t ▄     ▄     ▄\n" +
                                         "\t █▄   ▄█▄   ▄█\n" +
@@ -132,8 +129,8 @@ public class JogoDaVelha {
                                         "\t ▀▀▀▀▀▀▀▀▀▀▀▀▀\n" +
                                         "\t   JOGADOR 1\n" + COLOR_RESET
                                 );
-                                break;
-                            } else if (haVencedor(jogadas, jogador2)) {
+                                acabou = true;
+                            } else if (haVencedor(jogadas, 'O')) {//Jogador2 venceu?
                                 System.out.println(COLOR_YELLOW +
                                         "\t ▄     ▄     ▄\n" +
                                         "\t █▄   ▄█▄   ▄█\n" +
@@ -142,7 +139,7 @@ public class JogoDaVelha {
                                         "\t ▀▀▀▀▀▀▀▀▀▀▀▀▀\n" +
                                         "\t   JOGADOR 2\n" + COLOR_RESET
                                 );
-                                break;
+                                acabou = true;
                             }
                         }
                     } catch (Exception error) {
@@ -150,6 +147,7 @@ public class JogoDaVelha {
                     }
                 }
                 else{
+                    System.out.println(COLOR_YELLOW +"\n\t    EMPATE \n"+COLOR_RESET);
                     acabou = true;
                 }
             } catch (InputMismatchException error) {
@@ -164,10 +162,6 @@ public class JogoDaVelha {
         Character[][] jogadas = new Character[3][3];
         partida(jogadas);
 
-        if(haEmpate(jogadas)){
-            System.out.println(COLOR_YELLOW +"\t    EMPATE"+COLOR_RESET);
-        }
-
         Character resposta;
         do{
             System.out.print("DESEJA JOGAR NOVAMENTE? SIM[S] NÃO[N]: ");
@@ -180,8 +174,8 @@ public class JogoDaVelha {
                     System.out.println("\nFINALIZANDO PROGRAMA");
                     break;
                 default:
-                    System.out.println("\nDIGITE UMA RESPOSTA VÁLIDA ");
+                    System.out.println(COLOR_RED + "\nDIGITE UMA RESPOSTA VÁLIDA "+COLOR_RESET);
             }
-        }while(resposta !='S' && resposta !='N');
+        }while(resposta !='N');
     }
 }
