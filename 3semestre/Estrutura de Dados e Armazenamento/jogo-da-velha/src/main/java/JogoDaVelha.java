@@ -96,13 +96,16 @@ public class JogoDaVelha {
 
         Integer numJogadas = 1;
 
+        Character j1 = 'X';
+        Character j2 = 'O';
+
         reset(jogadas);
         exibi(jogadas);
 
         do {
             try {
                 if (!haEmpate(jogadas)) {
-                    Character quemTaJogado = numJogadas % 2 != 0 ? 'X' : 'O';//'X' representa o jogador1, 'O' representa o jogador2
+                    Character quemTaJogado = numJogadas % 2 != 0 ? j1 : j2;
                     System.out.printf("\nJogador %d - Faça sua jogada: \n", quemTaJogado == 'X' ? 1 : 2);
                     System.out.print("Digite a linha: ");
                     Integer linha = scanner.nextInt();
