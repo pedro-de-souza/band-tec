@@ -136,4 +136,15 @@ class EscolaControllerTest {
         assertEquals(400,resposta.getStatusCodeValue());
         assertEquals(null,resposta.getBody());
     }
+    @Test
+    @DisplayName("geTodosBetween() não deve ter corpo valor max e o min menor que 0 e trazer  status 404")
+    void geTodosBetweenCenario5() {
+        Integer min =  5;
+        Integer max =  -16;
+        List<Escola> escolas = new ArrayList<>();
+        Mockito.when(repository.findByAlunosBetween(min,max)).thenReturn(escolas);
+        ResponseEntity  resposta = controller.geTodosBetween(min,max);
+        assertEquals(400,resposta.getStatusCodeValue());
+        assertEquals(null,resposta.getBody());
+    }
 }
